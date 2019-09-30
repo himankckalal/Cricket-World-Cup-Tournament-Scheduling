@@ -8,14 +8,26 @@
     		first = 10;
     	//for 
         
-    	if  (count<41  && (first==second || ((first==prev1 || first==prev2 )||( second == prev1 || second ==prev2)) || ( *((result+first*10)+second) ==1 || *((result+second*10)+first) ==1   )))
+    	if  (count<41 && (first==second || ((first==prev1 || first==prev2 )||( second == prev1 || second ==prev2)) || ( *((result+first*10)+second) ==1 || *((result+second*10)+first) ==1   )))
     	{
-    		while(first==second || ((first==prev1 || first==prev2 )||( second == prev1 || second ==prev2)) ||  (  *((result+first*10)+second) ==1 || *((result+second*10)+first) ==1 ) )
-    		{
-    			first = rand()%9 +1 ;  
-    			second = rand() % 9 +1 ;
-    		}
+    		if(first!=10)
+            {   while(first==second || ((first==prev1 || first==prev2 )||( second == prev1 || second ==prev2)) ||  (  *((result+first*10)+second) ==1 || *((result+second*10)+first) ==1 ) )
+                {
+                    first = rand()%9 +1 ;  
+                    second = rand() % 9 +1 ;
+                }
+            }
+            else
+            {
+                while(first==second || ((first==prev1 || first==prev2 )||( second == prev1 || second ==prev2)) ||  (  *((result+first*10)+second) ==1 || *((result+second*10)+first) ==1 ) )
+                {
+                    //first = rand()%9 +1 ;  
+                    second = rand() % 9 +1 ;
+                }
+            }
+            
     	}
+        
         string days[] ={"SUNDAY","MON","TUE","WED","THRU","FRI","SAT"};
         string s[] = {"Australia" , "New Zealand", "Kenya", "Bangladesh","Pakistan","Afganistan","England","South Africa","Sri Lanka","India"};
     	cout<<"Match Between"<<setw(15)<<s[first-1]<<setw(15)<<s[second-1]<<setw(10)<<" ON "<<setw(10)<<days[count%7]<<" "<<count<<endl;

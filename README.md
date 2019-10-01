@@ -3,6 +3,8 @@ The Cricket World Cup Tournament Scheduling with Constraints.
 
 There are 10 teams participating across the globe.
 
+Each Team will play against 9 opponents.
+
     1)Australia
 
     2)New Zealand
